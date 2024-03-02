@@ -1,0 +1,47 @@
+import streamlit as st
+
+st.title("My First Application")
+st.subheader("Welcome Everyone")
+st.text_input("Enter your name")
+st.number_input("Enter your age",step=1)
+
+st.text_area("Describe your answer")
+
+st.selectbox("Gender", ["Male","Female","Others"])
+st.select_slider("Age",options=[10,20,30,40,50])
+
+st.select_slider("Time",options=[2,4,6,8])
+
+st.sidebar.selectbox("Focus",options=[1,2,3,4,5])
+
+from PIL import Image
+img = Image.open("snap.png")
+st.image(img)
+st.sidebar.image(img)
+
+st.checkbox("I agree")
+
+if st.button("Click me"):
+   st.success("You clicked me")
+
+if st.button("Congrats"):
+   st.balloons()
+
+pic = st.camera_input("say cheese")
+if st.sidebar.toggle("show"):
+   st.sidebar.image(img)
+
+st.date_input("Date Of Birth")
+
+
+st.download_button("Download", data=pic, file_name="image.jpg")
+
+
+
+
+
+
+
+
+
+
